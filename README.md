@@ -3,5 +3,8 @@ This is my professional portfolio.  This site uses AWS serverless architecture w
 
 ## Technologies Used:
 
+Brew
+
 Git and Github
+
 SSH
