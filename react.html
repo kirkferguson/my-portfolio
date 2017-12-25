@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>React Demo</title>
+    <link rel="stylesheet" href="https://unpkg.com/mocha@4.0.1/mocha.css">
     <style media="screen">
       .messageBox {
         border: 1px solid;
@@ -24,10 +25,13 @@
   </head>
   <body>
     <main id="content"></main>
+    <div id="mocha"></div>
+
     <script src="https://unpkg.com/babel-standalone"></script>
     <script type="text/javascript" src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
-
+    <script type="text/javascript" src="https://unpkg.com/chai@4.1.2/chai.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/mocha@4.0.1/mocha.js"></script>
     <script type="text/babel" data-presets="react">
 
       class NameInput extends React.Component {
@@ -79,6 +83,50 @@
       }
 
       ReactDOM.render(<NameInput />, document.getElementById('content'));
+
+    </script>
+
+    <script type="text/babel" data-presets="react">
+
+      const assert = chai.assert;
+      mocha.ui("bdd");
+      mocha.reporter("html");
+
+      describe("Example tests", () => {
+        it("Proved that math works", () => {
+          assert.equal(5, 3+2, "Math works!");
+        });
+
+        it("Found our component", () => {
+          assert.isDefined(MessageBox, "Oour MessageBox component is defined.");
+        });
+
+        it("Let us test a function", () => {
+          let myName = "Kirk";
+
+          const greet = (name) => "Hello, " + name + "!";
+          assert.include(greet(myName), myName, "Greeting includes name.");
+        });
+      });
+
+      describe("Document tests", () => {
+        it("Rendered an empty messageBox", () => {
+          let msgBox = document.querySelector(".messageBox");
+          assert.isDefined(msgBox, "Message box is in the document.");
+          assert.include(msgBox.classList.value, "messageBox--hidden", "Message box is hidden.");
+          assert.equal(msgBox.innerText, "", "Message box is empty.");
+        });
+
+        it("Renendered an error when name is empty", () => {
+          let msgBox = document.querySelector(".messageBox");
+          let button = document.querySelector("#submit_info");
+          button.click();
+          assert.include(msgBox.classList.value, "error", "Message box type is error.");
+        });
+      });
+
+
+      mocha.run();
 
     </script>
   </body>
