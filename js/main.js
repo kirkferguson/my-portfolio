@@ -35,8 +35,28 @@ const myWork = [
   },
   {
     'title': "ReactJS / AWS Serverless Website",
-    'href': "https://portfolio.kirkferguson.info/",
-    'desc': "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    'href': "https://github.com/kirkferguson/my-portfolio",
+    'desc': "As a Director of IT " +
+            "for a large company, it's rare that I have the opportunity " +
+            "to code as part of my professional responsibility.  However, I'll often " +
+            "feed my passion for technology and stay abreast of industry trends " +
+            "with demo projects such as this Portfolio site during my evenings.  " +
+            "The site was built using several technologies as an example of general " +
+            "concept understanding for ReactJS and AWS Serverless website development in the following areas:  " +
+            "Source Control: Git and GitHub, " +
+            "Security and Access Control: Identity Access Manager, " +
+            "DNS Management: Route 53, " +
+            "Object Storage: S3, " +
+            "Content Distribution: CloudFront, " +
+            "Build Tools: CodeBuild & CodePipeline, " +
+            "Functions as a Service: Lambda, " +
+            "Page Structure: HTML, " +
+            "Look and feel: CSS, " +
+            "Interactivity: Javascript (React), " +
+            "Cross-Browser Compatability: Babel, " +
+            "Bundling & Asset Management: Webpack, " +
+            "Package Management: NPM, " +
+            "Testing: Jest (or Chai & Mocha).",
     'image': {
       'desc': "Screenshot of the architecture diagram for this site.",
       'src': "images/port-arch-tn.png",
